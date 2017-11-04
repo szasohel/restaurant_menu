@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Catalog</title>
+      <link href="https://fonts.googleapis.com/css?family=Princess+Sofia|Rokkitt" rel="stylesheet">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+      <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+   </head>
+   <body>
+      <div class="container">
+         <header class="header">
+            <div class="row">
+               <div class="col-md-8 title">
+                  <h1><a href="{{url_for('show_catagory')}}">Item Catalog</a></h1>
+               </div>
+               <div class="col-md-4 login">
+                  <button type="button" class="btn btn-info"><a href="{{url_for('show_login')}}">Login</a></button>
+               </div>
+            </div>
+            <div class="row justify-content-md-center">
+               <div class="col-md-auto flash">
+                  {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                  <ul>
+                     {% for message in messages %}
+                     <li> <strong> {{ message }} </strong> </li>
+                     {% endfor %}
+                  </ul>
+                  {% endif %}
+                  {% endwith %}
+               </div>
+            </div>
+         </header>
+         <article>
+            <div class="row justify-content-md-center">
+               <div class="col-md-6">
+                  {% for i in items %}
+                  <div class="list-group-item list-group-item-primary">
+                     <p>Name: {{i.name}}<br>Description: {{i.description}}</p>
+                     <button type="button" class="btn btn-primary"><a href="{{url_for('edit_item', catagory_id = catagory.id, item_id = i.id)}}">Edit</a></button>
+                     <button type="button" class="btn btn-danger"><a href="{{url_for('delete_item', catagory_id = catagory.id, item_id = i.id)}}">Delete</a></button>
+                  </div>
+                  {%endfor%}
+               </div>
+            </div>
+         </article>
+         <footer>
+            <div class="row">
+               <div class="col-md-10">
+                  &copy 2017 Sayed Zahed Abdullah
+               </div>
+            </div>
+         </footer>
+      </div>
+   </body>
+</html>

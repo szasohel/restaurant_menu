@@ -1,0 +1,107 @@
+body{
+	font-family: 'Rokkitt', serif;
+	background: url(bg.jpg) no-repeat fixed center;
+	background-size: 100%;
+}
+
+.container{
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+	margin-top: 40px;
+	background: url(cont_bg.jpg) no-repeat fixed center;
+	background-size: 100%;
+}
+
+header{
+	position: relative;
+	width: 100%;
+	height: 70px;
+	margin: 10px 0 40px 0;
+}
+
+.title a{
+	font-family: 'Princess Sofia', cursive;
+	color: red;
+}
+
+.title a:hover{
+	font-family: 'Princess Sofia', cursive;
+	color: violet;
+}
+
+.title h1{
+	margin: 10px 0 0px 10px;
+}
+
+.logout{
+	margin-right: 10px;
+}
+
+.login{
+	margin-top: auto;
+	text-align: right;
+	font-weight: bold;
+	color: black;
+}
+
+article{
+	padding-top: 30px;
+}
+
+.control{
+	text-align: center;
+	margin-bottom: 30px;
+}
+
+.sub_title{
+	margin-bottom: 30px;
+}
+
+.list-group-item{
+	margin-bottom: 10px;
+	width: 500px;
+}
+
+footer{
+	width: 100%;
+	position: relative;
+	margin-top: 20px;
+	border: 1px solid lightgreen;
+	background-color: lightgreen;
+}
+
+#cat_name{
+	width: 200px;
+}
+
+#item_name{
+	width: 200px;
+}
+
+.cat_title{
+	width: auto;
+	margin-bottom: 20px;
+}
+
+label{
+	font-weight: bold;
+}
+
+a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+a{
+	color: white;
+}
+
+.btn-success{
+	margin: 10px 10px 10px 0;
+	width: 250px;
+}
+
+.flash{
+	margin-top: 30px;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Catalog</title>
+	<link href="https://fonts.googleapis.com/css?family=Princess+Sofia|Rokkitt" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="container">
+	<header class="header">
+		<div class="row">
+			<div class="col-md-8 title">
+			<h1><a href="{{url_for('show_catagory')}}">Item Catalog</a></h1>
+			</div>
+			<div class="col-md-4 login">
+				<button type="button" class="btn btn-info"><a href="{{url_for('gdisconnect')}}" class="logout">Logout</a></button>
+			</div>
+		</div>
+		<div class="row justify-content-md-center">
+			<div class="col-md-auto flash">
+  					{% with messages = get_flashed_messages() %}
+				      {% if messages %}
+				          
+				        <ul>
+				        {% for message in messages %}
+				            <li> <strong> {{ message }} </strong></li>
+				        {% endfor %}
+				        </ul>
+				        {% endif %}
+				    {% endwith %}
+			</div>
+		</div>
+	</header>
+	<article>
+		<div class="row">
+			<div class="col-md-4 control">
+				<button type="button" class="btn btn-success"><h4><a href="{{url_for('new_catagory')}}">Create New Catagory</a></h4></button>
+			</div>
+			<div class="col-md-8">
+				<div class="list-group">
+					{% for i in catagories %}
+						<a href="{{url_for('show_item', catagory_id = i.id)}}" class="list-group-item list-group-item-action list-group-item-primary">{{i.name}}</a>
+					{%endfor%}
+				</div>
+			</div>
+		</div>
+	</article>
+	<footer>
+		<div class="row">
+			<div class="col-md-12">
+				&copy 2017 Sayed Zahed Abdullah
+			</div>
+		</div>
+	</footer>
+</div>
+</body>
+</html>

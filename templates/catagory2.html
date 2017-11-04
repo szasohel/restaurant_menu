@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>catagory</title>
+</head>
+<body>
+<header>
+	<h1>catalog</h1>
+</header>
+<a href="{{url_for('gdisconnect')}}">Logout</a>
+<h4><a href="{{url_for('new_catagory')}}">Create New Catagory</a></h4>
+<div class="flash">
+	{% with messages = get_flashed_messages() %}
+      {% if messages %}
+          
+        <ul>
+        {% for message in messages %}
+            <li> <strong> {{ message }} </strong> </li>
+        {% endfor %}
+        </ul>
+        {% endif %}
+    {% endwith %}
+</div>
+
+<ul>
+	{% for i in catagories %}
+
+	<li><a href="{{url_for('show_item', catagory_id = i.id)}}">{{i.name}}</a></li>
+	<a href="{{url_for('edit_catagory', catagory_id = i.id)}}">Edit</a>
+	<a href="{{url_for('delete_catagory', catagory_id = i.id)}}">Delete</a>
+	<br>
+	<br>
+
+	{%endfor%}
+</ul>
+
+
+
+</body>
+</html>
