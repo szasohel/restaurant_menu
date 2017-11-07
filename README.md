@@ -1,8 +1,8 @@
-#Project Title:
+# Project Title:
 
 Item catalog with CRUD functionality
 
-##Prerequisites:
+## Prerequisites:
 
 To run this project:
 1. Python2 or 3
@@ -11,7 +11,7 @@ To run this project:
 4. flask
 5. vagrant virtual machine
 
-##Files:
+## Files:
 catalog folder:
 	1. views.py
 	2. model.py
@@ -31,7 +31,7 @@ catalog folder:
 		2. bg.jpg
 		3. cont_bg.jpg
 
-##How it works:
+## How it works:
 
 This project sets up a SQLite database for a fictional catalog web application.
 HTML, CSS and JavaScript uses to design front end functionality. 
@@ -40,7 +40,7 @@ user can brows the site. to perform CRUD operation they have to log in. once
 logged in  they can create their own catagory, item. the can only edit and delete the
 item created by them. 
 
-##Steps for running the program:
+## Steps for running the program:
 
 1. VirtualBox is the software that actually runs the virtual machine. 
    You can download it from virtualbox.org. Install the platform 
@@ -61,10 +61,10 @@ item created by them.
 			http://localhost:5000
 11. You can now use the app in your local machine
 
-##Git access:
+## Git access:
 
 https://github.com/szasohel/item_catalog.git
 
-##Created by:
+## Created by:
 
 Sayed Zahed Abdullah Sohel
